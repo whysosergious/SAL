@@ -1,0 +1,78 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "UserPolygonBreathe"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("userPolygon3:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1.93188 ),
+"update": 0,
+"values": [ -25.0, 335.7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("userPolygon2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 7.9, 8.9, 11.3, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -0.419312, -56.5, -44.8, -57.1, -0.4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("userPolygon1:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.4, 7.4, 13.3, 17.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -29.0833, -78.3, 13.6, 83.8, -12.2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("userPolygon1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3.9, 6.7, 11.6, 16.5, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.160103, 0.0152435 ), Vector2( -3.3364, 0.190071 ), Vector2( 1.11785, 2.25757 ), Vector2( -0.109129, 3.17971 ), Vector2( 3.89408, 3.6065 ), Vector2( 0.160103, 0.0152435 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("userPolygon2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 4, 8.3, 13.5, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.11583, 8.59319 ), Vector2( -3.73821, 8.06871 ), Vector2( 1.05529, 2.69392 ), Vector2( 3.29547, 7.0058 ), Vector2( -1.11583, 8.59319 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("userPolygon3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.9, 5.6, 9.7, 14.3, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.90969, -18.0999 ), Vector2( -2.16024, -14.953 ), Vector2( -1.12385, -12.9739 ), Vector2( 5.99536, -15.0562 ), Vector2( 3.74316, -18.1637 ), Vector2( 2.90969, -18.0999 ) ]
+}

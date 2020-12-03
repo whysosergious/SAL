@@ -1,0 +1,397 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://assets/background/BackgroundGrain.png" type="Texture" id=1]
+[ext_resource path="res://elements/Menu/SpButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://elements/Menu/SettingsButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://elements/Menu/SettingsGroup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://elements/Menu/MpButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://elements/Menu/HighscoreButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/misc/GameLabel.png" type="Texture" id=7]
+[ext_resource path="res://assets/misc/GameLabelCover.png" type="Texture" id=8]
+[ext_resource path="res://assets/fonts/ArgentumSans-Bold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/background/elements/BluePolygon.png" type="Texture" id=10]
+[ext_resource path="res://assets/background/elements/RedPolygon.png" type="Texture" id=11]
+[ext_resource path="res://anim/MenuBgElementsBreathe.tres" type="Animation" id=12]
+[ext_resource path="res://anim/GameLabelBreathe.tres" type="Animation" id=13]
+[ext_resource path="res://assets/misc/light.png" type="Texture" id=14]
+[ext_resource path="res://assets/misc/spot.png" type="Texture" id=15]
+[ext_resource path="res://assets/fonts/ArgentumSans-Regular.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://elements/Menu/MpRequestPrompt.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/audio/inputDec.wav" type="AudioStream" id=18]
+[ext_resource path="res://elements/Menu/MpGroup.tscn" type="PackedScene" id=19]
+[ext_resource path="res://elements/Menu/HighscoreGroup.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/icons/UserIcon.png" type="Texture" id=21]
+[ext_resource path="res://elements/Menu/NamePromptContainer.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Menu.cs" type="Script" id=23]
+[ext_resource path="res://assets/icons/CloseIcon.png" type="Texture" id=25]
+[ext_resource path="res://elements/Menu/MenuButton.cs" type="Script" id=27]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/light.png-9f54f82f0a5191c95852c8cd6f8e34db.stex"
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -155.486, -31.6611, -141.633, -25.1694, 71.8472, -25.3939, 85.1339, -30.8746, 93.1059, -48.6456, 86.4626, -63.7593, 72.6776, -69.9044, -141.512, -69.191, -157.922, -59.7242, -162.215, -46.1385 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( -155.486, -31.6611, -141.633, -25.1694, 71.8472, -25.3939, 85.1339, -30.8746, 93.1059, -48.6456, 86.4626, -63.7593, 72.6776, -69.9044, -141.512, -69.191, -157.922, -59.7242, -162.215, -46.1385 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( -155.486, -31.6611, -141.633, -25.1694, 71.8472, -25.3939, 85.1339, -30.8746, 93.1059, -48.6456, 86.4626, -63.7593, 72.6776, -69.9044, -141.512, -69.191, -157.922, -59.7242, -162.215, -46.1385 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( -54.6392, -25.6105, -15.103, -29.113, 12.4804, -37.2125, 21.6749, -45.0931, 12.4804, -56.914, -24.2975, -66.108, -79.4642, -68.0781, -122.678, -65.2324, -153.939, -56.914, -163.134, -48.5956, -157.617, -39.1827, -137.389, -31.3021, -97.8531, -26.2672 )
+
+[sub_resource type="Gradient" id=6]
+colors = PoolColorArray( 0.247059, 0.0352941, 0.219608, 1, 0.172549, 0.215686, 0.207843, 1 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 17.1887
+
+[sub_resource type="CanvasItemMaterial" id=9]
+blend_mode = 4
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="DynamicFont" id=10]
+size = 27
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 21
+use_filter = true
+font_data = ExtResource( 16 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 79.9524, 19.47 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 178.938, 370.478 )
+
+[node name="Menu" type="Node2D"]
+position = Vector2( 14.7244, 4.42795 )
+script = ExtResource( 23 )
+
+[node name="Lights" type="Sprite" parent="."]
+position = Vector2( 146.101, 302.024 )
+
+[node name="Light2D" type="Light2D" parent="Lights"]
+position = Vector2( 257.695, -102.206 )
+scale = Vector2( 0.906072, 0.906072 )
+texture = SubResource( 1 )
+color = Color( 0.384314, 0.352941, 0.705882, 0.603922 )
+energy = 1.2
+shadow_enabled = true
+shadow_gradient_length = 1.0
+shadow_filter = 5
+shadow_filter_smooth = 2.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Lights/Light2D"]
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D2" type="Light2D" parent="Lights"]
+position = Vector2( -22.4453, -180.294 )
+scale = Vector2( 1.18423, 1.18423 )
+texture = ExtResource( 14 )
+texture_scale = 0.48
+color = Color( 0.262745, 0.0470588, 0.0470588, 0.537255 )
+energy = 1.34
+shadow_enabled = true
+shadow_color = Color( 0.141176, 0.0941176, 0.0784314, 0 )
+shadow_gradient_length = 1.0
+shadow_filter = 5
+shadow_filter_smooth = 2.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Lights/Light2D2"]
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D3" type="Light2D" parent="Lights"]
+position = Vector2( 209.434, 34.3773 )
+scale = Vector2( 1.22828, 1.22828 )
+texture = ExtResource( 14 )
+color = Color( 0.309804, 0.0862745, 0.262745, 0.466667 )
+energy = 0.61
+shadow_enabled = true
+shadow_gradient_length = 2.0
+shadow_filter = 5
+shadow_filter_smooth = 10.1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Lights/Light2D3"]
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Lights"]
+position = Vector2( -146.101, -302.024 )
+color = Color( 0.894118, 0.717647, 0.843137, 1 )
+
+[node name="Node2D" type="Node2D" parent="Lights"]
+position = Vector2( -146.101, -302.024 )
+
+[node name="Sprite" type="Sprite" parent="Lights/Node2D"]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Lights/Node2D/Sprite"]
+visible = false
+position = Vector2( 210.047, 597.128 )
+occluder = SubResource( 2 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Lights/Node2D/Sprite"]
+position = Vector2( 214.934, 658.884 )
+occluder = SubResource( 3 )
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Lights/Node2D/Sprite"]
+position = Vector2( 212.49, 571.375 )
+occluder = SubResource( 4 )
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Lights/Node2D/Sprite"]
+light_mask = 2063
+position = Vector2( 39.0371, 78.6238 )
+scale = Vector2( 0.221772, 0.931488 )
+occluder = SubResource( 5 )
+light_mask = 2063
+
+[node name="Background" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="BackgroundGradient" type="TextureRect" parent="Background"]
+margin_left = -53.0188
+margin_top = -415.172
+margin_right = 686.982
+margin_bottom = -55.1714
+rect_scale = Vector2( 1.12256, 1.33098 )
+rect_clip_content = true
+mouse_filter = 2
+texture = SubResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundElements" type="Node2D" parent="Background/BackgroundGradient"]
+position = Vector2( 88.5787, 334.72 )
+scale = Vector2( 0.890822, 0.751327 )
+
+[node name="Polygon1" type="Sprite" parent="Background/BackgroundGradient/BackgroundElements"]
+modulate = Color( 1, 1, 1, 0.0666667 )
+position = Vector2( 70.1114, -341.079 )
+rotation = 0.838737
+scale = Vector2( 2.56997, 2.56997 )
+texture = ExtResource( 11 )
+
+[node name="Polygon2" type="Sprite" parent="Background/BackgroundGradient/BackgroundElements"]
+modulate = Color( 1, 1, 1, 0.0666667 )
+position = Vector2( 258.871, -327.069 )
+rotation = -2.2915
+scale = Vector2( 1.53648, 1.53648 )
+texture = ExtResource( 11 )
+
+[node name="Polygon3" type="Sprite" parent="Background/BackgroundGradient/BackgroundElements"]
+modulate = Color( 1, 1, 1, 0.0431373 )
+position = Vector2( 363.834, -472.374 )
+rotation = 0.322153
+scale = Vector2( 2.45051, 2.45051 )
+texture = ExtResource( 11 )
+
+[node name="Polygon4" type="Sprite" parent="Background/BackgroundGradient/BackgroundElements"]
+modulate = Color( 1, 1, 1, 0.027451 )
+position = Vector2( 311.941, -59.3925 )
+rotation = -0.652514
+scale = Vector2( 1.78195, 1.78195 )
+texture = ExtResource( 10 )
+
+[node name="Polygon5" type="Sprite" parent="Background/BackgroundGradient/BackgroundElements"]
+modulate = Color( 1, 1, 1, 0.0509804 )
+position = Vector2( 523.593, -59.2678 )
+rotation = 2.13871
+scale = Vector2( 2.28003, 2.28003 )
+texture = ExtResource( 10 )
+
+[node name="Polygon6" type="Sprite" parent="Background/BackgroundGradient/BackgroundElements"]
+modulate = Color( 1, 1, 1, 0.0509804 )
+position = Vector2( 215.053, 61.9006 )
+rotation = -0.67865
+scale = Vector2( 2.53523, 2.53523 )
+texture = ExtResource( 10 )
+
+[node name="BackgroundGrain" type="TextureRect" parent="Background/BackgroundGradient/BackgroundElements"]
+modulate = Color( 0.796078, 0.537255, 0.678431, 0.0470588 )
+margin_right = 360.0
+margin_bottom = 740.0
+rect_rotation = 270.0
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="AnimationPlayer" parent="Background/BackgroundGradient/BackgroundElements"]
+autoplay = "MenuBgElementsBreathe"
+anims/MenuBgElementsBreathe = ExtResource( 12 )
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="SettingsButton" parent="Buttons" instance=ExtResource( 3 )]
+position = Vector2( 22.2756, 35.5721 )
+collision_layer = 1048575
+script = ExtResource( 27 )
+
+[node name="MpButton" parent="Buttons" instance=ExtResource( 5 )]
+position = Vector2( 179.163, 522.392 )
+script = ExtResource( 27 )
+
+[node name="HighscoreButton" parent="Buttons" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 174.276, 595.694 )
+script = ExtResource( 27 )
+
+[node name="SpButton" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( 179.163, 612.154 )
+script = ExtResource( 27 )
+
+[node name="CloseButton" type="StaticBody2D" parent="Buttons"]
+position = Vector2( 318.276, 83.5721 )
+input_pickable = true
+script = ExtResource( 27 )
+
+[node name="Col" type="CollisionShape2D" parent="Buttons/CloseButton"]
+visible = false
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Buttons/CloseButton"]
+modulate = Color( 1, 1, 1, 0.196078 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 25 )
+
+[node name="GameLabelGroup" type="Node2D" parent="."]
+position = Vector2( 174.276, 206.496 )
+scale = Vector2( 1.15885, 1.15885 )
+
+[node name="Label" type="Sprite" parent="GameLabelGroup"]
+modulate = Color( 2.2, 2.45, 2.21, 1 )
+position = Vector2( 17.5171, 6.03052 )
+scale = Vector2( 0.26, 0.26 )
+texture = ExtResource( 7 )
+
+[node name="LabelCover" type="Sprite" parent="GameLabelGroup"]
+modulate = Color( 0.427451, 0.329412, 0.443137, 0.392157 )
+material = SubResource( 9 )
+position = Vector2( 17.8301, 8.16669 )
+scale = Vector2( 0.263204, 0.258637 )
+texture = ExtResource( 8 )
+offset = Vector2( -4, 4 )
+
+[node name="Comment" type="Label" parent="GameLabelGroup"]
+margin_left = -124.311
+margin_top = 121.678
+margin_right = 164.689
+margin_bottom = 182.731
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.933333, 0.866667, 0.898039, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.105882 )
+custom_constants/shadow_offset_x = 3
+custom_constants/line_spacing = 7
+custom_constants/shadow_offset_y = 4
+text = "^This counts
+as your tutorial"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="AnimationPlayer" parent="GameLabelGroup"]
+autoplay = "GameLabelBreathe"
+anims/GameLabelBreathe = ExtResource( 13 )
+
+[node name="UserGroup" type="StaticBody2D" parent="."]
+position = Vector2( 350.276, 27.572 )
+input_pickable = true
+
+[node name="Label" type="Label" parent="UserGroup"]
+margin_left = -214.0
+margin_top = -12.0
+margin_right = -30.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 0.470588 )
+text = "DirtyPoodle"
+align = 2
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="UserGroup"]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( -11, 0 )
+scale = Vector2( 0.22, 0.22 )
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserGroup"]
+visible = false
+position = Vector2( -77.8543, 0.323468 )
+shape = SubResource( 12 )
+
+[node name="SettingsGroup" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 174.276, 299.572 )
+
+[node name="MpGroup" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -5.7244, -4.42795 )
+
+[node name="HighscoreGroup" parent="." instance=ExtResource( 20 )]
+visible = false
+position = Vector2( -5.7244, -4.42795 )
+
+[node name="MenuTouch" type="Area2D" parent="."]
+gravity = 0.0
+linear_damp = 0.0
+angular_damp = 0.0
+monitoring = false
+monitorable = false
+collision_layer = 513
+collision_mask = 513
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Col" type="CollisionShape2D" parent="MenuTouch"]
+visible = false
+position = Vector2( 180, 370 )
+shape = SubResource( 13 )
+
+[node name="NamePromptContainer" parent="." instance=ExtResource( 22 )]
+visible = false
+
+[node name="MpRequestPrompt" parent="." instance=ExtResource( 17 )]
+visible = false
+
+[node name="InputStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+autoplay = true
+mix_target = 2
+bus = "inputPlayer"

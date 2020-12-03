@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://elements/QuickMenuButton.cs" type="Script" id=1]
+[ext_resource path="res://elements/QuickMenuContainer.cs" type="Script" id=2]
+[ext_resource path="res://assets/misc/QuickMenuBg.png" type="Texture" id=3]
+[ext_resource path="res://elements/Menu/SettingsGroup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/buttons/menu/SinglePressed.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/ArgentumSans-SemiBold.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0, 0.0509804, 0.00784314, 0.737255 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 360
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 124.627, 19.9845 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+size = 21
+use_filter = true
+font_data = ExtResource( 6 )
+
+[node name="QuickMenuContainer" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -30.0
+margin_top = -33.0
+margin_right = 390.0
+margin_bottom = 774.0
+rect_scale = Vector2( 1.06292, 0.990534 )
+mouse_filter = 2
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputBlockTop" type="TextureRect" parent="."]
+margin_left = 83.0
+margin_top = -112.0
+margin_right = 360.0
+margin_bottom = 73.0
+rect_scale = Vector2( 1.15378, 0.801619 )
+mouse_filter = 0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputBlockBottom" type="TextureRect" parent="."]
+margin_top = 425.333
+margin_right = 360.0
+margin_bottom = 700.333
+rect_scale = Vector2( 1.09706, 1.11401 )
+mouse_filter = 0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuickMenu" type="Node2D" parent="."]
+position = Vector2( 192.607, 358.357 )
+z_index = 2
+
+[node name="Background" type="Sprite" parent="QuickMenu"]
+position = Vector2( 0, -153.684 )
+scale = Vector2( 0.262454, 0.216725 )
+texture = ExtResource( 3 )
+
+[node name="MainMenuButton" type="StaticBody2D" parent="QuickMenu"]
+position = Vector2( 0, -17.7318 )
+input_pickable = true
+collision_layer = 32768
+collision_mask = 32768
+script = ExtResource( 1 )
+
+[node name="Col" type="CollisionShape2D" parent="QuickMenu/MainMenuButton"]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="QuickMenu/MainMenuButton"]
+scale = Vector2( 0.845, 0.845 )
+frames = SubResource( 4 )
+animation = "idle"
+
+[node name="Label" type="Label" parent="QuickMenu/MainMenuButton"]
+margin_left = -121.0
+margin_top = -11.0
+margin_right = 121.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 121.107, 11.1059 )
+custom_fonts/font = SubResource( 5 )
+text = "Return to Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsGroup" parent="QuickMenu" instance=ExtResource( 4 )]
+position = Vector2( 0, -137.933 )

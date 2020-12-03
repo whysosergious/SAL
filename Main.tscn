@@ -1,0 +1,581 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://elements/SimonBtn.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Main.cs" type="Script" id=2]
+[ext_resource path="res://assets/fonts/Oxygen-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/icons/TimerIcon.png" type="Texture" id=4]
+[ext_resource path="res://elements/StartRoundBtn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://anim/AnimPack.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/background/BackgroundGrain.png" type="Texture" id=7]
+[ext_resource path="res://assets/background/elements/BigCircle.png" type="Texture" id=8]
+[ext_resource path="res://assets/background/elements/DarkCircle.png" type="Texture" id=9]
+[ext_resource path="res://elements/userPolygonGroup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/background/elements/LightCircle.png" type="Texture" id=11]
+[ext_resource path="res://assets/background/elements/RedPolygon.png" type="Texture" id=12]
+[ext_resource path="res://assets/fonts/ArgentumSans-Regular.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://assets/misc/light.png" type="Texture" id=14]
+[ext_resource path="res://anim/CameraShake.tres" type="Animation" id=15]
+[ext_resource path="res://anim/OppPolygonsBreathe.tres" type="Animation" id=16]
+[ext_resource path="res://shaders/first.tres" type="Shader" id=17]
+[ext_resource path="res://elements/Point.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/misc/spot.png" type="Texture" id=20]
+[ext_resource path="res://elements/Menu/SettingsButton.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/fonts/SquadaOne-Regular.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://assets/fonts/ArgentumSans-Italic.ttf" type="DynamicFontData" id=23]
+[ext_resource path="res://elements/QuickMenuContainer.tscn" type="PackedScene" id=24]
+[ext_resource path="res://anim/BackgroundElementsBreathe2.tres" type="Animation" id=25]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.160784, 0.309804, 0.376471, 1, 0.431373, 0.109804, 0.12549, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 8184
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 0.427451, 0.137255, 0.121569, 1, 0.160784, 0.309804, 0.376471, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+width = 8184
+
+[sub_resource type="Animation" id=5]
+resource_name = "Roll"
+length = 260.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("RollingBg1:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -1098.59, -0.25, 0, 0.25, 0, -1104.22, -0.25, 0, 0.25, 0, -1104.22, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 104, 260 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("RollingBg1:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -3055.21, -0.25, 0, 0.25, 0, 94.9298, -0.25, 0, 0.25, 0, 2715.85, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 104, 260 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("RollingBg1:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 90, -0.25, 0, 0.25, 0, 90, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 104 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("RollingBg2:rect_position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 180, -0.25, 0, 0.25, 0, 178.133, -0.25, 0, 0.25, 0, 178.133, -0.25, 0, 0.25, 0, 178.133, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 104, 104.1, 260 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("RollingBg2:rect_position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -1704.42, -0.25, 0, 0.25, 0, 1448.13, -0.25, 0, 0.25, 0, -2987.85, -0.25, 0, 0.25, 0, -366.928, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 104, 104.1, 260 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("RollingBg2:rect_rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 90, -0.25, 0, 0.25, 0, 90, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 104 )
+}
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( 336.012, 166.436, 333.57, 151.014, 323.932, 140.99, 310.053, 137.649, 294.503, 144.331, 287.634, 156.625, 288.976, 172.604, 299.9, 184.042, 315.45, 186.741, 330.486, 178.516 )
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 17 )
+
+[sub_resource type="StreamTexture" id=8]
+flags = 4
+load_path = "res://.import/light.png-9f54f82f0a5191c95852c8cd6f8e34db.stex"
+
+[sub_resource type="DynamicFont" id=9]
+size = 55
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 45
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 34
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 120
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 54
+font_data = ExtResource( 23 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 249.88, 426.579 )
+
+[node name="Main" type="Node2D"]
+position = Vector2( 12.0728, -5.34482 )
+script = ExtResource( 2 )
+
+[node name="BackgroundElements" type="TextureRect" parent="."]
+margin_left = -35.1328
+margin_top = -49.4483
+margin_right = 382.867
+margin_bottom = 810.551
+rect_scale = Vector2( 1.07231, 0.992431 )
+rect_clip_content = true
+mouse_filter = 2
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundPlayer" type="AnimationPlayer" parent="BackgroundElements"]
+root_node = NodePath("bgCircle1")
+autoplay = "BackgroundElementsBreathe"
+playback_default_blend_time = 1184.39
+playback_speed = 0.5
+anims/BackgroundElementsBreathe = ExtResource( 25 )
+
+[node name="bgCircle1" type="Sprite" parent="BackgroundElements/BackgroundPlayer"]
+modulate = Color( 0.447059, 0.168627, 0.12549, 0.027451 )
+position = Vector2( 124.627, 457.878 )
+scale = Vector2( 1.04035, 1.04035 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="bgCircle2" type="Sprite" parent="BackgroundElements/BackgroundPlayer/bgCircle1"]
+modulate = Color( 3.28627, 0.85098, 1.27843, 0.772549 )
+position = Vector2( -193.076, 342.52 )
+scale = Vector2( 1.26673, 1.26673 )
+texture = ExtResource( 11 )
+
+[node name="bgCircle3" type="Sprite" parent="BackgroundElements/BackgroundPlayer/bgCircle1"]
+modulate = Color( 0, 0.321569, 1, 1 )
+position = Vector2( 88.4966, 658.478 )
+scale = Vector2( 1.08856, 1.08856 )
+texture = ExtResource( 9 )
+
+[node name="bgCircle4" type="Sprite" parent="BackgroundElements/BackgroundPlayer/bgCircle1"]
+modulate = Color( 0, 0, 1, 1 )
+position = Vector2( 111.94, 313.778 )
+scale = Vector2( 1.10319, 1.10319 )
+texture = ExtResource( 9 )
+
+[node name="bgCircle5" type="Sprite" parent="BackgroundElements/BackgroundPlayer/bgCircle1"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 199.516, -153.234 )
+scale = Vector2( 0.96989, 0.96989 )
+texture = ExtResource( 11 )
+
+[node name="bgCircle6" type="Sprite" parent="BackgroundElements/BackgroundPlayer/bgCircle1"]
+modulate = Color( 0, 0, 0, 0.819608 )
+position = Vector2( -81.558, -302.869 )
+scale = Vector2( 0.803244, 0.803244 )
+texture = ExtResource( 11 )
+
+[node name="RollingBgGroup" type="Node2D" parent="BackgroundElements"]
+modulate = Color( 0.752941, 0.709804, 0.698039, 1 )
+position = Vector2( 194.185, 341.375 )
+scale = Vector2( 1.19383, 1.00763 )
+
+[node name="RollingBg1" type="TextureRect" parent="BackgroundElements/RollingBgGroup"]
+margin_left = -1090.0
+margin_top = -3055.21
+margin_right = 1130.0
+margin_bottom = -2695.22
+rect_rotation = 90.0
+rect_pivot_offset = Vector2( 1072.97, 205.204 )
+mouse_filter = 2
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RollingBg2" type="TextureRect" parent="BackgroundElements/RollingBgGroup"]
+margin_left = 188.592
+margin_top = -1704.42
+margin_right = 2408.59
+margin_bottom = -1344.42
+rect_rotation = 90.0
+mouse_filter = 2
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundElements/RollingBgGroup/RollingBg2"]
+root_node = NodePath("../..")
+anims/Roll = SubResource( 5 )
+
+[node name="Light" type="Node2D" parent="."]
+position = Vector2( -126.067, 87.856 )
+rotation = 0.747981
+scale = Vector2( 1.22989, 1.22989 )
+
+[node name="BackgroundGrain" type="TextureRect" parent="Light"]
+modulate = Color( 0.0666667, 0.0235294, 0.0666667, 1 )
+self_modulate = Color( 0.858824, 0.686275, 0.666667, 1 )
+margin_left = -27.7022
+margin_top = -121.47
+margin_right = 298.298
+margin_bottom = 546.53
+rect_rotation = -42.705
+rect_scale = Vector2( 1.19143, 0.995303 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Light"]
+modulate = Color( 1, 1, 1, 0.454902 )
+position = Vector2( -43.1802, -309.932 )
+rotation = -9.6845e-08
+scale = Vector2( 1.23093, 1.23093 )
+texture = ExtResource( 20 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Light/Sprite"]
+position = Vector2( 148.379, 277.76 )
+rotation = -0.747981
+scale = Vector2( 0.703612, 0.703612 )
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Light/Sprite"]
+position = Vector2( 55.3471, 383.705 )
+rotation = -0.747981
+scale = Vector2( 0.613431, 0.613431 )
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Light/Sprite"]
+position = Vector2( 156.49, 398.185 )
+rotation = -0.747981
+scale = Vector2( 0.676855, 0.676855 )
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Light/Sprite"]
+position = Vector2( 90.6365, 459.287 )
+rotation = -0.747981
+scale = Vector2( 0.676855, 0.676855 )
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Light/Sprite"]
+position = Vector2( 222.793, 337.568 )
+rotation = -0.747981
+scale = Vector2( 0.676855, 0.676855 )
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="Light/Sprite"]
+position = Vector2( 276.876, 403.627 )
+rotation = -0.747981
+scale = Vector2( 0.676855, 0.676855 )
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="Light/Sprite"]
+position = Vector2( 222.534, 469.366 )
+rotation = -0.747981
+scale = Vector2( 0.676855, 0.676855 )
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Light/Sprite"]
+position = Vector2( 153.365, 519.125 )
+rotation = -0.747981
+scale = Vector2( 0.676855, 0.676855 )
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="Light/Sprite"]
+visible = false
+light_mask = 31
+position = Vector2( -147.047, 306.68 )
+rotation = -0.747981
+scale = Vector2( 1.2, 1.2 )
+occluder = SubResource( 6 )
+light_mask = 31
+
+[node name="Light1" type="Light2D" parent="Light"]
+light_mask = 3
+position = Vector2( 258.295, -153.55 )
+rotation = -2.98023e-08
+scale = Vector2( 0.0725488, 0.0725488 )
+texture = ExtResource( 14 )
+texture_scale = 8.67
+color = Color( 0.843137, 0.607843, 0.211765, 0.137255 )
+energy = 2.61
+mode = 2
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0.0470588 )
+shadow_gradient_length = 106.6
+shadow_item_cull_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2" type="Light2D" parent="Light"]
+light_mask = 3
+material = SubResource( 7 )
+position = Vector2( 158.755, -10.6091 )
+rotation = -2.98023e-08
+scale = Vector2( 0.0725488, 0.0725488 )
+texture = SubResource( 8 )
+texture_scale = 6.66
+color = Color( 0.321569, 0.0823529, 0.286275, 0.807843 )
+energy = 1.29
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color( 0.0901961, 0.0156863, 0.0156863, 0 )
+shadow_gradient_length = 176.2
+shadow_item_cull_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Light"]
+position = Vector2( 26.5543, -122.084 )
+rotation = -0.747981
+scale = Vector2( 0.813078, 0.813078 )
+color = Color( 0.443137, 0.772549, 0.654902, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OppPolygonGroup" type="Node2D" parent="."]
+position = Vector2( 177.481, 145.115 )
+z_index = 2
+
+[node name="OppPolygon1" type="Sprite" parent="OppPolygonGroup"]
+modulate = Color( 1, 1, 1, 0.301961 )
+position = Vector2( -0.191162, 1.91919 )
+rotation = -0.30534
+scale = Vector2( 0.367185, 0.367185 )
+texture = ExtResource( 12 )
+
+[node name="OppPolygon2" type="Sprite" parent="OppPolygonGroup"]
+modulate = Color( 1, 1, 1, 0.145098 )
+position = Vector2( -0.0651855, -2.02234 )
+rotation = 0.00247256
+scale = Vector2( 0.467046, 0.467046 )
+texture = ExtResource( 12 )
+
+[node name="OppPolygonPlayer" type="AnimationPlayer" parent="OppPolygonGroup"]
+autoplay = "OppPolygonsBreathe"
+anims/OppPolygonsBreathe = ExtResource( 16 )
+
+[node name="Point" parent="." instance=ExtResource( 19 )]
+visible = false
+
+[node name="userPolygonGroup" parent="." instance=ExtResource( 10 )]
+position = Vector2( 180.375, 250.692 )
+z_index = 2
+
+[node name="SimonGroup" type="Node2D" parent="."]
+light_mask = 2
+position = Vector2( -4, 0 )
+z_index = 2
+
+[node name="SimonBtn1" parent="SimonGroup" instance=ExtResource( 1 )]
+position = Vector2( 52.9272, 405.345 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="SimonBtn2" parent="SimonGroup" instance=ExtResource( 1 )]
+position = Vector2( 308.927, 405.345 )
+
+[node name="SimonBtn3" parent="SimonGroup" instance=ExtResource( 1 )]
+position = Vector2( 44.9272, 541.345 )
+
+[node name="SimonBtn4" parent="SimonGroup" instance=ExtResource( 1 )]
+position = Vector2( 180.927, 541.345 )
+
+[node name="SimonBtn5" parent="SimonGroup" instance=ExtResource( 1 )]
+position = Vector2( 316.927, 541.345 )
+
+[node name="SimonBtn6" parent="SimonGroup" instance=ExtResource( 1 )]
+position = Vector2( 52.9272, 672.345 )
+
+[node name="SimonBtn7" parent="SimonGroup" instance=ExtResource( 1 )]
+position = Vector2( 180.927, 688.345 )
+
+[node name="SimonBtn8" parent="SimonGroup" instance=ExtResource( 1 )]
+position = Vector2( 308.927, 672.345 )
+
+[node name="LabelGroup" type="Node2D" parent="."]
+position = Vector2( -4.48383, 24.9049 )
+z_index = 3
+
+[node name="UserScoreLbl" type="Label" parent="LabelGroup"]
+margin_left = 82.9404
+margin_top = 186.707
+margin_right = 282.94
+margin_bottom = 263.707
+rect_pivot_offset = Vector2( 99.6324, 39.9587 )
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.972549, 0.976471, 0.886275, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserScoreOrigin" type="Node2D" parent="LabelGroup"]
+position = Vector2( 182.11, 235.234 )
+
+[node name="OppScoreLbl" type="Label" parent="LabelGroup"]
+anchor_top = -0.000943694
+anchor_bottom = -0.000943694
+margin_left = 132.266
+margin_top = 90.4088
+margin_right = 232.266
+margin_bottom = 148.409
+rect_pivot_offset = Vector2( 49.8106, 30.2242 )
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.905882, 0.894118, 1, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OppScoreOrigin" type="Node2D" parent="LabelGroup"]
+position = Vector2( 182.11, 112.234 )
+
+[node name="RoundTimerLbl" type="Label" parent="LabelGroup"]
+margin_left = 130.749
+margin_top = 22.6014
+margin_right = 230.749
+margin_bottom = 64.6014
+rect_pivot_offset = Vector2( 49.7973, 20.3358 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.184314 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 3
+text = "30.0s"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timerIcon" type="TextureRect" parent="LabelGroup"]
+modulate = Color( 1, 1, 1, 0.807843 )
+margin_left = 171.968
+margin_top = -2.49822
+margin_right = 265.968
+margin_bottom = 91.5019
+rect_scale = Vector2( 0.22, 0.22 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartRoundBtn" parent="." instance=ExtResource( 5 )]
+position = Vector2( 304.927, 45.3448 )
+z_index = 3
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="SettingsButton" parent="." instance=ExtResource( 21 )]
+position = Vector2( 24.9272, 45.3448 )
+z_index = 7
+
+[node name="AnimPack" parent="." instance=ExtResource( 6 )]
+
+[node name="MainCamera" type="Camera2D" parent="."]
+modulate = Color( 0.572549, 0.435294, 0.8, 0.027451 )
+position = Vector2( 180, 370 )
+rotating = true
+current = true
+editor_draw_limits = true
+
+[node name="Player" type="AnimationPlayer" parent="MainCamera"]
+anims/CameraShake = ExtResource( 15 )
+
+[node name="OppNameGroup" type="Node2D" parent="."]
+position = Vector2( 116.927, 149.345 )
+
+[node name="Label" type="Label" parent="OppNameGroup"]
+margin_left = -110.606
+margin_top = -28.0375
+margin_right = 247.394
+margin_bottom = 110.962
+rect_pivot_offset = Vector2( 79.4646, 35.5249 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.396078, 0.545098, 0.541176, 0.0784314 )
+text = "Bambi"
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="vs" type="Label" parent="OppNameGroup"]
+margin_left = -88.4777
+margin_top = -69.9934
+margin_right = -34.4777
+margin_bottom = 7.00659
+rect_pivot_offset = Vector2( 20.814, 34.666 )
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0.396078, 0.545098, 0.541176, 0.0588235 )
+text = "vs"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MainTouch" type="Area2D" parent="."]
+gravity_vec = Vector2( 0, 0 )
+linear_damp = 0.0
+angular_damp = 0.0
+monitoring = false
+monitorable = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Col" type="CollisionShape2D" parent="MainTouch"]
+visible = false
+position = Vector2( 180, 370 )
+shape = SubResource( 14 )
+
+[node name="QuickMenuContainer" parent="." instance=ExtResource( 24 )]
+visible = false
+position = Vector2( -13.8466, 8.07254 )
+z_index = 4
+[connection signal="body_entered" from="Point" to="userPolygonGroup" method="_on_Point_Collided"]
+[connection signal="body_entered" from="userPolygonGroup" to="Point" method="_on_Point_Collided"]

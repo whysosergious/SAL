@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/buttons/menu/MpPressed.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/ArgentumSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/icons/MpIcon.png" type="Texture" id=3]
+[ext_resource path="res://assets/buttons/menu/MpIdle.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 126.06, 20.3322 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "pressed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 21
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="MpButton" type="StaticBody2D"]
+position = Vector2( -0.166077, 0.1661 )
+input_pickable = true
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Col" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+modulate = Color( 0.945098, 0.745098, 0.745098, 1 )
+scale = Vector2( 0.845, 0.845 )
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 96.7808, -2.81166 )
+scale = Vector2( 0.200415, 0.200415 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -109.42
+margin_top = -10.1428
+margin_right = 77.5804
+margin_bottom = 10.8572
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Play with a Friend"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

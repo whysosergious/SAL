@@ -1,0 +1,236 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/fonts/ArgentumSans-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/icons/ArrowLeft.png" type="Texture" id=2]
+[ext_resource path="res://assets/icons/ArrowRight.png" type="Texture" id=3]
+[ext_resource path="res://elements/Menu/DifficultyChange.cs" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16.5201, 17.1629 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 17.5743, 16.7657 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 99.2267, 18.1703 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 99.2267, 18.1703 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 99.2267, 18.1703 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 24
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 99.2267, 18.1703 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 24
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="DifficultyGroup" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = -179.704
+margin_top = -53.8314
+margin_right = 180.296
+margin_bottom = -37.8314
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.886275, 0.886275, 0.615686, 0.654902 )
+text = "Difficulty"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowLeft" type="RigidBody2D" parent="."]
+modulate = Color( 1, 1, 1, 0.321569 )
+position = Vector2( -134.704, 0.16858 )
+input_pickable = true
+collision_layer = 32768
+collision_mask = 32768
+mode = 1
+script = ExtResource( 4 )
+
+[node name="Col" type="CollisionShape2D" parent="ArrowLeft"]
+visible = false
+position = Vector2( 0, -0.397217 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="ArrowLeft"]
+modulate = Color( 1, 1, 1, 0.470588 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="ArrowRight" type="RigidBody2D" parent="."]
+position = Vector2( 135.296, 0.16858 )
+input_pickable = true
+collision_layer = 32768
+collision_mask = 32768
+mode = 1
+script = ExtResource( 4 )
+
+[node name="Col" type="CollisionShape2D" parent="ArrowRight"]
+visible = false
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="ArrowRight"]
+modulate = Color( 1, 1, 1, 0.470588 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="Container" type="Control" parent="."]
+margin_left = -123.704
+margin_top = -23.8314
+margin_right = 125.296
+margin_bottom = 20.1686
+rect_pivot_offset = Vector2( 125.366, 22.6612 )
+rect_clip_content = true
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Easy" type="RigidBody2D" parent="Container"]
+position = Vector2( 124, 24 )
+input_pickable = true
+collision_layer = 8
+collision_mask = 8
+mode = 1
+script = ExtResource( 4 )
+
+[node name="Col" type="CollisionShape2D" parent="Container/Easy"]
+visible = false
+shape = SubResource( 4 )
+
+[node name="Label" type="Label" parent="Container/Easy"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -15.0
+margin_right = 100.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 100, 15 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "I´m hungover"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Normal" type="RigidBody2D" parent="Container"]
+position = Vector2( 384, 24 )
+input_pickable = true
+collision_layer = 8
+collision_mask = 8
+mode = 1
+script = ExtResource( 4 )
+
+[node name="Col" type="CollisionShape2D" parent="Container/Normal"]
+visible = false
+shape = SubResource( 6 )
+
+[node name="Label" type="Label" parent="Container/Normal"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -15.0
+margin_right = 100.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 100, 15 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Okay I guess"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hard" type="RigidBody2D" parent="Container"]
+position = Vector2( 384, 24 )
+input_pickable = true
+collision_layer = 8
+collision_mask = 8
+mode = 1
+script = ExtResource( 4 )
+
+[node name="Col" type="CollisionShape2D" parent="Container/Hard"]
+visible = false
+shape = SubResource( 8 )
+
+[node name="Label" type="Label" parent="Container/Hard"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -15.0
+margin_right = 100.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 100, 15 )
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Give it to me!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tough" type="RigidBody2D" parent="Container"]
+position = Vector2( 384, 24 )
+input_pickable = true
+collision_layer = 8
+collision_mask = 8
+mode = 1
+script = ExtResource( 4 )
+
+[node name="Col" type="CollisionShape2D" parent="Container/Tough"]
+visible = false
+shape = SubResource( 10 )
+
+[node name="Label" type="Label" parent="Container/Tough"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -120.0
+margin_top = -15.0
+margin_right = 120.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 120, 15 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Seizure Warning"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

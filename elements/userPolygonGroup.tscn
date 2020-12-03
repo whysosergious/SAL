@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/background/elements/BluePolygon.png" type="Texture" id=1]
+[ext_resource path="res://anim/UserPolygonsBreathe.tres" type="Animation" id=2]
+[ext_resource path="res://elements/userPolygonGroup.cs" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 48.2577
+
+[node name="userPolygonGroup" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+
+[node name="userPolygonPlayer" type="AnimationPlayer" parent="."]
+autoplay = "UserPolygonBreathe"
+anims/UserPolygonBreathe = ExtResource( 2 )
+
+[node name="userPolygon1" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.164706 )
+position = Vector2( 0.160103, 0.0152435 )
+rotation = -0.507599
+scale = Vector2( 0.451176, 0.449093 )
+texture = ExtResource( 1 )
+
+[node name="userPolygon2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( -1.11583, 8.59319 )
+rotation = -0.00731838
+scale = Vector2( 0.373264, 0.373264 )
+texture = ExtResource( 1 )
+offset = Vector2( -17.7577, -19.041 )
+
+[node name="userPolygon3" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 2.90969, -18.0999 )
+rotation = -0.436332
+scale = Vector2( -0.245885, -0.245885 )
+texture = ExtResource( 1 )
+offset = Vector2( -0.0346756, 4.82449 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -0.247299, 6.66468 )
+shape = SubResource( 1 )
+
+[node name="PlayerNode" type="Node2D" parent="."]

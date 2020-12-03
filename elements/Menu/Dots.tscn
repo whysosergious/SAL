@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://anim/Dots.tres" type="Animation" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 20
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 1 )
+width = 20
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 1 )
+width = 20
+
+[node name="Dots" type="Sprite"]
+modulate = Color( 0.117647, 0.0235294, 0.0235294, 1 )
+position = Vector2( 180, 290 )
+offset = Vector2( 1.68698, -0.958435 )
+
+[node name="Dot1" type="TextureRect" parent="."]
+margin_left = -17.0
+margin_top = -3.0
+margin_right = -11.0
+margin_bottom = 3.0
+rect_pivot_offset = Vector2( 3, 3 )
+mouse_filter = 2
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dot2" type="TextureRect" parent="."]
+margin_left = -3.0
+margin_top = -3.0
+margin_right = 3.0
+margin_bottom = 3.0
+rect_pivot_offset = Vector2( 3, 3 )
+mouse_filter = 2
+texture = SubResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dot3" type="TextureRect" parent="."]
+margin_left = 11.0
+margin_top = -3.0
+margin_right = 17.0
+margin_bottom = 3.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 3, 3 )
+mouse_filter = 2
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="AnimationPlayer" parent="."]
+autoplay = "Dots"
+anims/Dots = ExtResource( 1 )

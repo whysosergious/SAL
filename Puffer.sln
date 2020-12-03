@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puffer", "Puffer.csproj", "{A20DFB10-8A41-4D8F-B4AB-38D5F8F2365C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	Release|Any CPU = Release|Any CPU
+	Tools|Any CPU = Tools|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A20DFB10-8A41-4D8F-B4AB-38D5F8F2365C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A20DFB10-8A41-4D8F-B4AB-38D5F8F2365C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A20DFB10-8A41-4D8F-B4AB-38D5F8F2365C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A20DFB10-8A41-4D8F-B4AB-38D5F8F2365C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A20DFB10-8A41-4D8F-B4AB-38D5F8F2365C}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
+		{A20DFB10-8A41-4D8F-B4AB-38D5F8F2365C}.Tools|Any CPU.Build.0 = Tools|Any CPU
+	EndGlobalSection
+EndGlobal

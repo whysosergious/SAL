@@ -1,0 +1,66 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "GameLabelBreathe"
+length = 24.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LabelCover:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Comment:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5.2, 10.4, 15.2, 19.6, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -124.311, 121.678 ), Vector2( -119.311, 133.678 ), Vector2( -116.694, 124.359 ), Vector2( -115.382, 121.413 ), Vector2( -122.847, 117.545 ), Vector2( -124.311, 121.678 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 5.7, 11.6, 17.4, 24 ),
+"transitions": PoolRealArray( 1.86607, 1.46409, 2.54912, 0.517632, 1.41421 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 20, 64 ), Vector2( 48, 27 ), Vector2( -4, 15 ), Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("LabelCover:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 6.2, 11.7, 18.1, 24 ),
+"transitions": PoolRealArray( 3.13834, 1.51572, 1.62451, 2.37841, 0.535887 ),
+"update": 0,
+"values": [ Vector2( -4, 4 ), Vector2( 18, 47 ), Vector2( 55, 34 ), Vector2( 10, 18 ), Vector2( -4, 4 ) ]
+}

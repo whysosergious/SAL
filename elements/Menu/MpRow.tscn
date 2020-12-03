@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/ArgentumSans-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/misc/ListBg.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 47
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 70
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 577.905, 75.0154 )
+
+[node name="Row" type="Sprite"]
+self_modulate = Color( 1, 1, 1, 0.054902 )
+position = Vector2( 140, 17 )
+scale = Vector2( 0.24, 0.24 )
+texture = ExtResource( 2 )
+
+[node name="Name" type="Label" parent="."]
+margin_left = -509.0
+margin_top = -49.0
+margin_right = -31.0
+margin_bottom = 61.0
+rect_pivot_offset = Vector2( 0, 33 )
+custom_fonts/font = SubResource( 1 )
+text = "Bambi"
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoreLabel" type="Label" parent="."]
+margin_left = -73.1667
+margin_top = -36.6666
+margin_right = 294.833
+margin_bottom = 73.3334
+rect_pivot_offset = Vector2( 0, 33 )
+custom_fonts/font = SubResource( 2 )
+text = "Best Score"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Highscore" type="Label" parent="."]
+margin_left = 257.833
+margin_top = -42.6667
+margin_right = 515.833
+margin_bottom = 74.3333
+rect_pivot_offset = Vector2( 0, 45 )
+custom_fonts/font = SubResource( 3 )
+text = "224p"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="StaticBody2D" parent="."]
+z_index = 7
+input_pickable = true
+collision_layer = 32769
+collision_mask = 32769
+
+[node name="Col" type="CollisionShape2D" parent="Button"]
+visible = false
+shape = SubResource( 4 )

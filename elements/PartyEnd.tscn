@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+render_priority = 2
+blend_mode = 4
+light_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="ParticlesMaterial" id=3]
+next_pass = SubResource( 2 )
+lifetime_randomness = 0.7
+emission_shape = 1
+emission_sphere_radius = 0.01
+flag_align_y = true
+flag_rotate_y = true
+flag_disable_z = true
+direction = Vector3( 0, 150, 0 )
+spread = 150.0
+gravity = Vector3( 0, 10, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 0.8
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel_random = 1.0
+radial_accel_random = 0.04
+damping = 40.0
+damping_random = 1.0
+scale = 9.0
+scale_random = 0.6
+color = Color( 0.984314, 1, 0.670588, 1 )
+hue_variation = 0.4
+hue_variation_random = 0.39
+
+[node name="PartyEnd" type="Particles2D"]
+material = SubResource( 1 )
+position = Vector2( 0, -5 )
+z_index = 4
+amount = 12
+lifetime = 4.0
+preprocess = 30.0
+speed_scale = 4.0
+explosiveness = 1.0
+randomness = 1.0
+local_coords = false
+draw_order = 1
+process_material = SubResource( 3 )

@@ -1,0 +1,54 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "OppPolygonsBreathe"
+length = 14.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("OppPolygon2:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.2, 6, 7.5, 9.4, 11.1, 12.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.141667, -113.3, -77.1985, -146.9, -168.2, -58.8, -71.8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("OppPolygon1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -17.4947, 342.5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("OppPolygon2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.8, 7.9, 10.3, 14 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.0651855, -2.02234 ), Vector2( 3.00659, 2.25439 ), Vector2( -0.221191, 3.23431 ), Vector2( 3.6062, -1.323 ), Vector2( -0.0651855, -2.02234 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("OppPolygon1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.5, 8.6, 11.9, 14 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.191162, 1.91919 ), Vector2( 1.90674, -0.528381 ), Vector2( -0.604492, 0.769897 ), Vector2( 2.79492, 0.248291 ), Vector2( -0.191162, 1.91919 ) ]
+}

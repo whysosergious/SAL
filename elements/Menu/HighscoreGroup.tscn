@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://themes/First.tres" type="Theme" id=2]
+[ext_resource path="res://assets/fonts/ArgentumSans-Medium.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 21
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="HighscoreGroup" type="Node2D"]
+
+[node name="Frame" type="Node2D" parent="."]
+position = Vector2( 180, 100 )
+
+[node name="Label" type="Label" parent="Frame"]
+margin_left = -100.0
+margin_top = -15.0
+margin_right = 100.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 100, 15 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.941176, 0.917647, 0.643137, 1 )
+text = "Top Scores"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="Line2D" parent="Frame"]
+position = Vector2( -180, 25 )
+points = PoolVector2Array( 30, 0, 330, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 0.196078 )
+round_precision = 3
+
+[node name="Line2" type="Line2D" parent="Frame"]
+position = Vector2( -180, 305 )
+points = PoolVector2Array( 30, 0, 330, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 0.196078 )
+round_precision = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 40.0
+margin_top = 135.0
+margin_right = 320.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( 140, 0 )
+mouse_filter = 1
+theme = ExtResource( 2 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="List" type="Control" parent="ScrollContainer"]
+margin_bottom = 47.0
+rect_min_size = Vector2( 0, 47 )
+mouse_filter = 2

@@ -1,0 +1,108 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Puffer"
+config/description="Who doesn't like to yell at their friends?"
+run/main_scene="res://Main.tscn"
+boot_splash/image="res://grumble.png"
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.cs"
+Menu="*res://Menu.tscn"
+
+[compression]
+
+formats/zstd/long_distance_matching=true
+formats/zstd/compression_level=6
+formats/zlib/compression_level=1
+formats/gzip/compression_level=1
+
+[debug]
+
+settings/profiler/max_functions=12000
+settings/crash_handler/message="Well isn't this great .."
+settings/fps/force_fps=30
+
+[display]
+
+window/size/width=384
+window/size/height=720
+window/size/always_on_top=true
+window/vsync/use_vsync=false
+window/handheld/orientation="portrait"
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[editor]
+
+convert_text_resources_to_binary_on_export=true
+
+[editor_plugins]
+
+enabled=PoolStringArray( "MonoDebuggerQM-1.0.1" )
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[mono]
+
+profiler/enabled=true
+
+[physics]
+
+common/physics_fps=30
+3d/active_soft_world=false
+2d/thread_model=2
+2d/bp_hash_table_size=2048
+2d/cell_size=64
+2d/large_object_surface_threshold_in_cells=256
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation=1
+quality/intended_usage/framebuffer_allocation.mobile=1
+threads/thread_model=2
+quality/filters/anisotropic_filter_level=1
+quality/directional_shadow/size=1024
+quality/directional_shadow/size.mobile=612
+quality/shadow_atlas/size=612
+quality/shadow_atlas/size.mobile=306
+quality/shadow_atlas/quadrant_0_subdiv=0
+quality/shadow_atlas/quadrant_1_subdiv=1
+quality/shadow_atlas/quadrant_2_subdiv=2
+quality/shadow_atlas/quadrant_3_subdiv=3
+quality/shadows/filter_mode=0
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/reflections/irradiance_max_size=64
+quality/shading/force_vertex_shading.mobile=false
+quality/shading/force_lambert_over_burley.mobile=false
+quality/shading/force_blinn_over_ggx.mobile=false
+quality/depth_prepass/enable=false
+quality/filters/use_nearest_mipmap_filter=true
+quality/subsurface_scattering/quality=0
+quality/subsurface_scattering/scale=0
+quality/subsurface_scattering/weight_samples=false
+quality/reflections/atlas_size=1024
+quality/reflections/atlas_subdiv=4
+quality/depth/hdr=false
+environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false

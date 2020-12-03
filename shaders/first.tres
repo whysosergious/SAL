@@ -1,0 +1,85 @@
+[gd_resource type="VisualShader" load_steps=4 format=2]
+
+[sub_resource type="VisualShaderNodeColorOp" id=1]
+default_input_values = [ 0, Vector3( 200, 200, 200 ), 1, Vector3( 0, 0, 0 ) ]
+operator = 7
+
+[sub_resource type="VisualShaderNodeInput" id=2]
+input_name = "specular"
+
+[sub_resource type="VisualShaderNodeCompare" id=3]
+default_input_values = [ 0, Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ), 1, Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ), 2, 1e-05 ]
+type = 3
+function = 5
+
+[resource]
+code = "shader_type spatial;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Output:0
+
+}
+
+void light() {
+// Input:3
+	vec3 n_out3p0 = SPECULAR_LIGHT;
+
+// Compare:4
+	mat4 n_in4p0 = mat4(vec4(1.00000, 0.00000, 0.00000, 0.0), vec4(0.00000, 1.00000, 0.00000, 0.0), vec4(0.00000, 0.00000, 1.00000, 0.0), vec4(0.00000, 0.00000, 0.00000, 1.0));
+	mat4 n_in4p1 = mat4(vec4(1.00000, 0.00000, 0.00000, 0.0), vec4(0.00000, 1.00000, 0.00000, 0.0), vec4(0.00000, 0.00000, 1.00000, 0.0), vec4(0.00000, 0.00000, 0.00000, 1.0));
+	bool n_out4p0 = false;
+
+// ColorOp:2
+	vec3 n_in2p1 = vec3(0.00000, 0.00000, 0.00000);
+	vec3 n_out2p0;
+	{
+		float base = vec3(n_out4p0 ? 1.0 : 0.0).x;
+		float blend = n_in2p1.x;
+		if (base < 0.5) {
+			n_out2p0.x = (base * (blend + 0.5));
+		} else {
+			n_out2p0.x = (1.0 - (1.0 - base) * (1.0 - (blend - 0.5)));
+		}
+	}
+	{
+		float base = vec3(n_out4p0 ? 1.0 : 0.0).y;
+		float blend = n_in2p1.y;
+		if (base < 0.5) {
+			n_out2p0.y = (base * (blend + 0.5));
+		} else {
+			n_out2p0.y = (1.0 - (1.0 - base) * (1.0 - (blend - 0.5)));
+		}
+	}
+	{
+		float base = vec3(n_out4p0 ? 1.0 : 0.0).z;
+		float blend = n_in2p1.z;
+		if (base < 0.5) {
+			n_out2p0.z = (base * (blend + 0.5));
+		} else {
+			n_out2p0.z = (1.0 - (1.0 - base) * (1.0 - (blend - 0.5)));
+		}
+	}
+
+// Output:0
+	DIFFUSE_LIGHT = n_out3p0;
+	SPECULAR_LIGHT = n_out2p0;
+
+}
+"
+graph_offset = Vector2( 0, 75 )
+nodes/fragment/0/position = Vector2( 420, 140 )
+nodes/light/0/position = Vector2( 980, 180 )
+nodes/light/2/node = SubResource( 1 )
+nodes/light/2/position = Vector2( 683, 225 )
+nodes/light/3/node = SubResource( 2 )
+nodes/light/3/position = Vector2( 620, 140 )
+nodes/light/4/node = SubResource( 3 )
+nodes/light/4/position = Vector2( 220, 160 )
+nodes/light/connections = PoolIntArray( 4, 0, 2, 0, 3, 0, 0, 0, 2, 0, 0, 1 )

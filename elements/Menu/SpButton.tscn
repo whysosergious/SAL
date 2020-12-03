@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/buttons/menu/SingleIdle.png" type="Texture" id=1]
+[ext_resource path="res://assets/buttons/menu/SinglePressed.png" type="Texture" id=2]
+[ext_resource path="res://assets/icons/PlayIcon.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/ArgentumSans-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 126.327, 20.8177 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "pressed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 21
+font_data = ExtResource( 4 )
+
+[node name="SpButton" type="StaticBody2D"]
+position = Vector2( -0.166077, 0.166 )
+input_pickable = true
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Col" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.845, 0.845 )
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 102.445, -0.470876 )
+scale = Vector2( 0.235623, 0.235623 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -107.152
+margin_top = -9.76483
+margin_right = 78.8483
+margin_bottom = 11.2352
+custom_fonts/font = SubResource( 3 )
+text = "Play with Yourself"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,28 @@
+
+{
+    "mono-debug.exceptionOptions": {
+        "System.ArithmeticException": "always",
+        "System.ArrayTypeMismatchException": "always",
+        "System.DivideByZeroException": "always",
+        "System.Exception": "always",
+        "System.IndexOutOfRangeException": "always",
+        "System.InvalidCastException": "always",
+        "System.NullReferenceException": "always",
+        "System.OutOfMemoryException": "always",
+        "System.OverflowException": "always",
+        "System.StackOverflowException": "always",
+        "System.SystemException": "always",
+        "System.TypeInitializationException": "always"
+    },
+    "debug.console.fontSize": 12,
+    "debug.allowBreakpointsEverywhere": true,
+    "terminal.explorerKind": "external",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.rightClickBehavior": "default",
+    "debug.openDebug": "neverOpen",
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "deepIndent",
+    "godot_tools.editor_path": "d:\\work\\!Godot\\Godot_v3.2-stable_mono_win64.exe",
+    "json.maxItemsComputed": 4000,
+    "editor.maxTokenizationLineLength": 15000
+}
