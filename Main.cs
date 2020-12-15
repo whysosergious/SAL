@@ -103,29 +103,6 @@ public partial class Main : Node2D {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public int oppID;
 	public string oppName = "";
 	// multiplayer methods
@@ -582,22 +559,6 @@ public partial class Main : Node2D {
 	public void RoundFinished(int finalScore) {
 		g.oppScoreLabel.Text = finalScore.ToString();
 	}
-
-
-
-
-
-
-
-
-
-
-
-	//___________________________________________________________________________
-
-
-
-
 
 
 
